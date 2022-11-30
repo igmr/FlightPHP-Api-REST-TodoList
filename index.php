@@ -31,7 +31,7 @@ function doc()
 {
 	$docs = [
 		'base_api'		=>	'https://ivangabino.com/apis/flightphp-api-rest/api',
-		'clone'			=>	'git clone',
+		'clone'			=>	'git clone git@github.com:igmr/FlightPHP-Api-REST-TodoList.git',
 		'requirements'	=>	['php5.3^', 'composer', 'mysql'],
 		'composer'		=>	'composer update',
 		'cmd'			=>	'php -S localhost:8081',
