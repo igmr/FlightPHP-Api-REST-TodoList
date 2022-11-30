@@ -1,0 +1,27 @@
+{
+	"editor.tabSize": 4,
+	"editor.fontSize": 16,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "all",
+	"cSpell.words": [
+		"Autoloader",
+		"autoloading",
+		"Cond",
+		"conexion",
+		"configuracion",
+		"DATETIME",
+		"flightphp",
+		"igmr",
+		"Initcc",
+		"Inno",
+		"introduccion",
+		"ivangabi",
+		"mysql",
+		"mysqldump",
+		"phpdbg",
+		"subl",
+		"TINYINT",
+		"VARCHAR"
+	]
+}
