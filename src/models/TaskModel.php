@@ -1,4 +1,5 @@
 <?php
+
 class TaskModel
 {
 	public function findAll()

@@ -1,15 +1,17 @@
 <?php
 
 require('./vendor/autoload.php');
+
 //*	General
 require('./Config.php');
-require('./src/service/BaseService.php');
+require('./src/services/BaseService.php');
 //*	Lists
-require('./src/model/ListModel.php');
-require('./src/service/ListService.php');
+require('./src/models/ListModel.php');
+require('./src/services/ListService.php');
 //*	Task
-require('./src/model/TaskModel.php');
-require('./src/service/TaskService.php');
+require('./src/models/TaskModel.php');
+require('./src/services/TaskService.php');
+
 
 //*	*****************************************************************************
 //*	Configuración general														*

@@ -1,4 +1,5 @@
 <?php
+
 class ListModel
 {
 	public function findAll()
