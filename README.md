@@ -277,7 +277,7 @@ VALUES
   , null, false, NOW()),
  (2, 'Configuramos la conexion hacia la base de datos MySql desde el archivo index.php'
   , null, false, NOW()),
- (2, 'Creamos estuctura de carpetas'
+ (2, 'Creamos estructura de carpetas'
   , null, false, NOW()),
  (2, 'Creamos y configuramos el archivo baseService.php'
   , null, false, NOW()),
