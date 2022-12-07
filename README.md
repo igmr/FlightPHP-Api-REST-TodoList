@@ -24,7 +24,7 @@
 ## Introducción
 
 Ejemplo sencillo utilizando el Framework php, **Flight PHP** con el fin de crear
-una **Api REST** con el gestor de base de datos MySql.
+una **Api REST** y el gestor de base de datos MySql.
 
 [Contenido](#contenido)
 
@@ -32,10 +32,10 @@ una **Api REST** con el gestor de base de datos MySql.
 
 ## Requerimiento
 
-* Php 7.4 o superior
-* Composer
-* Mysql
-* Flight PHP <a href="https://github.com/mikecao/flight" target="_blank">Repositorio</a>
+* <a href="https://www.php.net/docs.php" target="_blank">Php 7.4 o superior</a>
+* <a href="https://getcomposer.org/" target="_blank">Composer</a>
+* <a href="https://dev.mysql.com/" target="_blank">MySql</a>
+* <a href="https://github.com/mikecao/flight" target="_blank">Flight PHP</a>
 
 [Contenido](#contenido)
 
@@ -43,7 +43,7 @@ una **Api REST** con el gestor de base de datos MySql.
 
 ## Descarga de repositorio
 
-Clonaremos el proyecto por SSh o HTTPS
+Clonamos el proyecto con SSH o HTTPS
 
 ```bash
 # SSH
@@ -57,7 +57,7 @@ O
 git clone https://github.com/igmr/FlightPHP-Api-REST-TodoList.git
 ```
 
-Accederemos al proyecto
+Accedemos al proyecto
 
 ```bash
 cd FlightPHP-Api-REST-TodoList
@@ -73,7 +73,7 @@ cd FlightPHP-Api-REST-TodoList
 
 ### Instalación de dependencias utilizando Composer
 
-Ejecutar la siguiente comando para descargar las dependencias necesarias
+Ejecutar el siguiente comando para descargar las dependencias necesarias
 con el  administrador de dependencias Composer.
 
 <a href="https://getcomposer.org/" target="_blank">Ver más sobre Composer</a>
@@ -98,7 +98,7 @@ style="display: block; margin: 0 auto" />
 
 Para importar el script SQL hacia el gestor de base de datos MySql,
 lo podemos realizar mediante PhpMyAdmin, workbench o desde la linea de comando.
-El siguiente comando importa el script SQL a MySql desde la linea de comandos
+El siguiente comando importa el script SQL a MySql.
 
 ```bash
 # Sintaxis
