@@ -10,6 +10,7 @@
 
 * [Introducción](#introduccion)
 * [Requerimientos](#requerimientos)
+* [Librerías](#librerias)
 * [Descarga de repositorio](#repositorio)
 * [Proyecto](#proyecto)
   * [Instalación de dependencias utilizando Composer](#composer)
@@ -35,7 +36,17 @@ una **Api REST** y el gestor de base de datos MySql.
 * <a href="https://www.php.net/docs.php" target="_blank">Php 7.4 o superior</a>
 * <a href="https://getcomposer.org/" target="_blank">Composer</a>
 * <a href="https://dev.mysql.com/" target="_blank">MySql</a>
+
+[Contenido](#contenido)
+
+<a name="librerias"></a>
+
+## Librerías
+
+Librerías utilizadas.
+
 * <a href="https://github.com/mikecao/flight" target="_blank">Flight PHP</a>
+* <a href="https://github.com/phpenv/phpenv" target="_blank">Php ENV</a>
 
 [Contenido](#contenido)
 

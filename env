@@ -1,0 +1,12 @@
+
+# Variables globales
+LOG_ERRORS=false
+CASE_SENSITIVE=true
+BASE_URL=http://localhost:8081
+
+# Configuración de Base de datos
+DB_HOST=localhost
+DB_DATABASE=
+DB_USER=root
+DB_PASSWORD=
+DB_PORT=3306

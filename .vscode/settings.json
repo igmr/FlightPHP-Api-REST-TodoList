@@ -17,11 +17,15 @@
 		"Inno",
 		"introduccion",
 		"ivangabi",
+		"librerias",
+		"mikecao",
 		"mysql",
 		"mysqldump",
 		"phpdbg",
+		"phpdotenv",
 		"subl",
 		"TINYINT",
-		"VARCHAR"
+		"VARCHAR",
+		"vlucas"
 	]
 }
