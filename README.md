@@ -11,7 +11,7 @@
 * [Introducción](#introduccion)
 * [Requerimientos](#requerimientos)
 * [Descarga de repositorio](#repositorio)
-* [Configuración de proyecto](#proyecto)
+* [Proyecto](#proyecto)
   * [Instalación de dependencias utilizando Composer](#composer)
   * [Exportar script sql a MySql](#mysql)
   * [Configuración de proyecto](#configuracion)
@@ -128,7 +128,7 @@ mysqldump -u root -p FlightToDo > ./script.sql
 
 <a name="configuracion"></a>
 
-### Configuración de proyecto
+### Proyecto
 
 Abrimos el proyecto en nuestro editor de código de preferencia
 
