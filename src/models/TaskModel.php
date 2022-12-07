@@ -4,7 +4,7 @@ class TaskModel
 {
 	public function findAll()
 	{
-		$query = 'SELECT t.id, t.tittle, t.description, l.name AS list
+		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
@@ -18,7 +18,7 @@ class TaskModel
 	}
 	public function findAllCompleted()
 	{
-		$query = 'SELECT t.id, t.tittle, t.description, l.name AS list
+		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
@@ -32,7 +32,7 @@ class TaskModel
 	}
 	public function findAllDeleted()
 	{
-		$query = 'SELECT t.id, t.tittle, t.description, l.name AS list
+		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
@@ -46,7 +46,7 @@ class TaskModel
 	}
 	public function findOneById(string $id)
 	{
-		$query = 'SELECT t.id, t.tittle, t.description, l.name AS list
+		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
@@ -60,21 +60,21 @@ class TaskModel
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
-	public function store(string $tittle, string $description = ''
+	public function store(string $title, string $description = ''
 		, string $list = '1', bool $complete = false)
 	{
-		$query = 'INSERT INTO Tasks(list_id, tittle, description
+		$query = 'INSERT INTO Tasks(list_id, title, description
 			, completed, created_at)
 			VALUES
 			(?,?,?,?,NOW());';
 		$sql = Flight::db()->prepare($query);
 		$sql->bindParam(1, $list, PDO::PARAM_INT);
-		$sql->bindParam(2, $tittle, PDO::PARAM_STR);
+		$sql->bindParam(2, $title, PDO::PARAM_STR);
 		$sql->bindParam(3, $description, PDO::PARAM_STR);
 		$sql->bindParam(4, $complete, PDO::PARAM_BOOL);
 		return $sql->execute();
 	}
-	public function edit(string $id, string $tittle, string $description
+	public function edit(string $id, string $title, string $description
 		, int $list)
 	{
 		$status = true;
@@ -82,12 +82,12 @@ class TaskModel
 		{
 			return false;
 		}
-		if(!empty($tittle))
+		if(!empty($title))
 		{
-			$query = 'UPDATE Tasks SET tittle = ? WHERE 1=1 AND id = ?;';
+			$query = 'UPDATE Tasks SET title = ? WHERE 1=1 AND id = ?;';
 
 			$sql = Flight::db()->prepare($query);
-			$sql->bindParam(1, $tittle, PDO::PARAM_STR);
+			$sql->bindParam(1, $title, PDO::PARAM_STR);
 			$sql->bindParam(2, $id, PDO::PARAM_INT);
 			$status = $sql->execute();
 		}

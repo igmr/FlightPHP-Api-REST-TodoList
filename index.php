@@ -224,7 +224,7 @@ function doc()
 							'code'		=>	200,
 							'data'		=>	[
 								"id"			=>	 '',
-								"tittle"		=>	 '',
+								"title"		=>	 '',
 								"description"	=>	 '',
 								"list"			=>	 '',
 								"complete"		=>	 '',
@@ -257,7 +257,7 @@ function doc()
 							'code'		=>	200,
 							'data'		=>	[
 								"id"			=>	 '',
-								"tittle"		=>	 '',
+								"title"		=>	 '',
 								"description"	=>	 '',
 								"list"			=>	 '',
 								"complete"		=>	 '',
@@ -284,7 +284,7 @@ function doc()
 							'code'		=>	200,
 							'data'		=>	[
 								"id"			=>	 '',
-								"tittle"		=>	 '',
+								"title"		=>	 '',
 								"description"	=>	 '',
 								"list"			=>	 '',
 								"complete"		=>	 '',
@@ -311,7 +311,7 @@ function doc()
 							'code'		=>	200,
 							'data'		=>	[
 								"id"			=>	 '',
-								"tittle"		=>	 '',
+								"title"		=>	 '',
 								"description"	=>	 '',
 								"list"			=>	 '',
 								"complete"		=>	 '',
@@ -333,7 +333,7 @@ function doc()
 					'Content/Type'	=>	'Application/json',
 					'params'		=>	[],
 					'body'			=>	[
-						'tittle'	=>	[
+						'title'	=>	[
 							'description'	=>	'Titulo de tarea',
 							'type'			=>	'string(120)',
 							'required'		=>	true,
@@ -425,7 +425,7 @@ function doc()
 						],
 					],
 					'body'			=>	[
-						'tittle'	=>	[
+						'title'	=>	[
 							'description'	=>	'Titulo de tarea',
 							'type'			=>	'string(120)',
 							'required'		=>	false,

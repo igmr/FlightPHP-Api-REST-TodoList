@@ -94,13 +94,13 @@ class TaskService extends BaseService
 			//*	***************************************************************************
 			//*	CREATE
 			//*	***************************************************************************
-			$tittle = Flight::request()->data->tittle ?:'';
+			$title = Flight::request()->data->title ?:'';
 			$description = Flight::request()->data->description ?:'';
 			$list = Flight::request()->data->list ?:1;
 			$complete = false;
-			$tittle = $this->setString($tittle);
+			$title = $this->setString($title);
 			$description = $this->setString($description);
-			$created = $this->taskModel->store($tittle, $description
+			$created = $this->taskModel->store($title, $description
 				, $list,$complete);
 			if(!$created)
 			{
@@ -153,12 +153,12 @@ class TaskService extends BaseService
 			//*	***************************************************************************
 			//*	UPDATED
 			//*	***************************************************************************
-			$tittle = Flight::request()->data->tittle ?: '';
+			$title = Flight::request()->data->title ?: '';
 			$description = Flight::request()->data->description ?: '';
 			$list = Flight::request()->data->list ?:0;
-			$tittle = $this->setString($tittle);
+			$title = $this->setString($title);
 			$description = $this->setString($description);
-			$updated = $this->taskModel->edit($id, $tittle, $description
+			$updated = $this->taskModel->edit($id, $title, $description
 				, $list);
 			if(!$updated)
 			{
@@ -221,20 +221,20 @@ class TaskService extends BaseService
 	{
 		$errors = [];
 		$req = Flight::request()->data;
-		$tittle = $req->tittle ?: null;
+		$title = $req->title ?: null;
 		$description = $req->description ?: null;
 		$list = $req->list ?: 0;
 		if(count($req)== 0)
 		{
 			$errors['general'] = 'Datos no localizados.';
 		}
-		if(is_null($tittle))
+		if(is_null($title))
 		{
-			$errors['tittle'] = 'Es requerido.';
+			$errors['title'] = 'Es requerido.';
 		}
-		if(strlen($tittle)> 120)
+		if(strlen($title)> 120)
 		{
-			$errors['tittle'] = 'Longitud inválido.';
+			$errors['title'] = 'Longitud inválido.';
 		}
 		if(!is_null($description))
 		{
@@ -257,7 +257,7 @@ class TaskService extends BaseService
 	{
 		$errors = [];
 		$req = Flight::request()->data;
-		$tittle = $req->tittle ?: null;
+		$title = $req->title ?: null;
 		$description = $req->description ?: null;
 		$list = $req->list ?: 0;
 		$id = $id?:0;
@@ -269,11 +269,11 @@ class TaskService extends BaseService
 		{
 			$errors['general'] = 'Datos no localizados.';
 		}
-		if(!is_null($tittle))
+		if(!is_null($title))
 		{
-			if(strlen($tittle)> 120)
+			if(strlen($title)> 120)
 			{
-				$errors['tittle'] = 'Longitud inválido.';
+				$errors['title'] = 'Longitud inválido.';
 			}
 		}
 		if(!is_null($description))

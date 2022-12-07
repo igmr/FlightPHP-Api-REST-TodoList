@@ -241,7 +241,7 @@ DROP TABLE IF EXISTS Tasks;
 CREATE TABLE IF NOT EXISTS Tasks (
  id   INT   UNSIGNED NOT NULL     AUTO_INCREMENT COMMENT 'Primary key',
  list_id  INT   UNSIGNED  NULL DEFAULT 1      COMMENT 'Foreign key',
- tittle  VARCHAR(120)   NOT NULL         COMMENT 'Tittle task',
+ title  VARCHAR(120)   NOT NULL         COMMENT 'title task',
  description VARCHAR(512)    NULL DEFAULT NULL     COMMENT 'description task',
  completed TINYINT     NOT NULL DEFAULT 0      COMMENT 'It is completed?',
  created_at DATETIME    NOT NULL DEFAULT NOW()     COMMENT 'Audit',
@@ -255,7 +255,7 @@ CREATE TABLE IF NOT EXISTS Tasks (
 ENGINE = InnoDB
 COMMENT = 'List task';
 
-INSERT INTO Tasks(list_id, tittle, description, completed, created_at)
+INSERT INTO Tasks(list_id, title, description, completed, created_at)
 VALUES
  (1, 'predeterminado'
   , NULL, true, NOW()),
