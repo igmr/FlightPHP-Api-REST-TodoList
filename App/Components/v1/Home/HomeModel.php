@@ -1,12 +1,6 @@
 <?php
 
-class HomeService
-{
-	public function index()
-	{
-		$data = $this->getDocData();
-		return Flight::json($data,200);
-	}
+class HomeModel {
 	public function getDocData ()
 	{
 		return [

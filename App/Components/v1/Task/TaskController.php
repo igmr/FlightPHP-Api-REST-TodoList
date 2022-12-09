@@ -1,6 +1,10 @@
 <?php
 
-class TaskService extends BaseService
+require_once __DIR__.'/../../../Utils/Response.php';
+require_once __DIR__.'/../List/ListModel.php';
+require_once __DIR__.'/TaskModel.php';
+
+class TaskController extends Response
 {
 	//*	***************************************************************************
 	//*	General

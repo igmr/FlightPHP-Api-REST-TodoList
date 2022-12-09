@@ -1,6 +1,6 @@
 
 # Variables globales
-LOG_ERRORS=false
+CASE_SENSITIVE=false
 CASE_SENSITIVE=true
 BASE_URL=http://localhost:8081
 

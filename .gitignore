@@ -37,20 +37,50 @@ $RECYCLE.BIN/
 .Trash-*
 
 #-------------------------
+# Environment Files
+#-------------------------
+# These should never be under version control,
+# as it poses a security risk.
+.env
+.env.local
+.env.server
+.env.development
+.env.production
+.vagrant
+Vagrantfile
+
+#-------------------------
+# Temporary Files
+#-------------------------
+writable/cache/*
+!writable/cache/index.html
+
+writable/logs/*
+!writable/logs/index.html
+
+writable/session/*
+!writable/session/index.html
+
+writable/uploads/*
+!writable/uploads/index.html
+
+writable/debugbar/*
+
+php_errors.log
+
+
+#-------------------------
+# Test Files
+#-------------------------
+tests/*
+
+# Don't save phpunit under version control.
+phpunit
+
+#-------------------------
 # Composer
 #-------------------------
 vendor/
-composer.lock
-
-
-#-------------------------
-# Environment
-#-------------------------
-.env
-.env.local
-.env.development
-.env.server
-.env.production
 
 #-------------------------
 # IDE / Development Files
@@ -86,4 +116,8 @@ nb-configuration.xml
 /api/
 
 # Visual Studio Code
-#.vscode/
+.vscode/
+
+/results/
+/phpunit*.xml
+/.phpunit.*.cache

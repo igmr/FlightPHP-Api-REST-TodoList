@@ -16,7 +16,7 @@
   * [Instalación de dependencias utilizando Composer](#composer)
   * [Exportar script sql a MySql](#mysql)
   * [Configuración de proyecto](#configuracion)
-* [Crear servidor php](#servidor)
+* [Servidor php](#servidor)
 
 </details>
 
@@ -168,10 +168,12 @@ Flight::set('password', '');  // Contraseña de acceso del gestor de base e dato
 
 <a name="servidor"></a>
 
-### Crear servidor php
+### Servidor php
+
+Para levantar el servidor ejecutamos el script
 
 ```bash
-php -S localhost:8081
+composer run-script dev
 ```
 
 ## Ver más

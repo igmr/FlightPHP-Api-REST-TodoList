@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/../../../Utils/DataBase.php';
+
 class TaskModel
 {
 	public function findAll()
