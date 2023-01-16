@@ -9,6 +9,7 @@ $host = $_ENV['DB_HOST'];
 $db = $_ENV['DB_DATABASE'];
 $user = $_ENV['DB_USER'];
 $password = $_ENV['DB_PASSWORD'];
+$port = $_ENV['DB_PORT'];
 
 //*	*****************************************************************************
 //*	Configuración general														*
@@ -23,3 +24,4 @@ Flight::set('db.host', $host);
 Flight::set('db.database', $db);
 Flight::set('db.user', $user);
 Flight::set('db.password', $password);
+Flight::set('db.port', $port);

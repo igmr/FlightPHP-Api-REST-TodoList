@@ -7,8 +7,7 @@ $host = Flight::get('db.host');
 $db = Flight::get('db.database');
 $user = Flight::get('db.user');
 $pass = Flight::get('db.password');
-
-$port = 5432;
+$port = Flight::get('db.port');
 
 //*	*****************************************************************************
 //*	Cadena de conexión hacia base de datos										*
