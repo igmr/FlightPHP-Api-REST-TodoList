@@ -1,9 +1,9 @@
 <?php
 
 class Response{
-	//*	***************************************************************************
+	//*	***********************************************************************
 	//*	RESPONSE API REST
-	//*	***************************************************************************
+	//*	***********************************************************************
 	public function getResponseData(array $data, int $code = 200)
 	{
 		return Flight::json($data,$code);
@@ -31,23 +31,5 @@ class Response{
 			'error'		=>	$except,
 		];
 		return Flight::json($payload,$code);
-	}
-	public function setString(string $text)
-	{
-		//*	Remplazar caracteres
-		$search = array('á','é','í','ó','ú'
-			,'<','>','|','"',"'",'#','$','%','&','/'
-			,'(',')','=','´','*','+','¨','~','-','_'
-			,':',';');
-		$replace = array('a','e','i','o','u'
-			,'','','','','','','','','',''
-			,'','','','','','','','','',''
-			,'','');
-		$text = str_replace($search, $replace, $text);
-		//*	Quitar espacio al inicio t al final
-		$text = ltrim($text);
-		$text = rtrim($text);
-		//*	Escape de caracteres
-		return addslashes($text);
 	}
 }
