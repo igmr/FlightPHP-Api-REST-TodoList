@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/../../../Utils/Response.php';
+require_once __DIR__.'/../../../Utils/Text.php';
 require_once __DIR__.'/../List/ListModel.php';
 require_once __DIR__.'/TaskModel.php';
 
@@ -11,10 +12,12 @@ class TaskController extends Response
 	//*	***************************************************************************
 	protected $taskModel;
 	protected $listModel;
+	protected $text;
 	public function __construct()
 	{
 		$this->taskModel = new TaskModel();
 		$this->listModel = new ListModel();
+		$this->text = new Text(); 
 	}
 	//*	***************************************************************************
 	//*	Methods HTTP
@@ -102,8 +105,8 @@ class TaskController extends Response
 			$description = Flight::request()->data->description ?:'';
 			$list = Flight::request()->data->list ?:1;
 			$complete = false;
-			$title = $this->setString($title);
-			$description = $this->setString($description);
+			$title = $this->text->setString($title);
+			$description = $this->text->setString($description);
 			$created = $this->taskModel->store($title, $description
 				, $list,$complete);
 			if(!$created)
@@ -160,8 +163,8 @@ class TaskController extends Response
 			$title = Flight::request()->data->title ?: '';
 			$description = Flight::request()->data->description ?: '';
 			$list = Flight::request()->data->list ?:0;
-			$title = $this->setString($title);
-			$description = $this->setString($description);
+			$title = $this->text->setString($title);
+			$description = $this->text->setString($description);
 			$updated = $this->taskModel->edit($id, $title, $description
 				, $list);
 			if(!$updated)

@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/../../../Utils/Response.php';
+require_once __DIR__.'/../../../Utils/Text.php';
 require_once __DIR__.'/ListModel.php';
 
 class ListController extends Response
@@ -9,9 +10,11 @@ class ListController extends Response
 	//*	General
 	//*	***************************************************************************
 	protected $listModel;
+	protected $text;
 	public function __construct()
 	{
 		$this->listModel = new ListModel();
+		$this->text = new Text();
 	}
 	//*	***************************************************************************
 	//*	Methods HTTP
@@ -59,7 +62,7 @@ class ListController extends Response
 			$name = Flight::request()->data->name ?:null;
 			if(!is_null($name))
 			{
-				$name = $this->setString($name);
+				$name = $this->text->setString($name);
 			}
 			$created = $this->listModel->store($name);
 			if(!$created)
@@ -89,7 +92,7 @@ class ListController extends Response
 			$name = Flight::request()->data->name ?:null;
 			if(!is_null($name))
 			{
-				$name = $this->setString($name);
+				$name = $this->text->setString($name);
 			}
 			$updated = $this->listModel->edit($id, $name);
 			if(!$updated)
