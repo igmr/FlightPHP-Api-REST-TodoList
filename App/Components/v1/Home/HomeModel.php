@@ -4,7 +4,7 @@ class HomeModel {
 	public function getDocData ()
 	{
 		return [
-			'base_api'		=>	'https://ivangabino.com/apis/flightphp-api-rest/api',
+			'base_api'		=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api',
 			'clone'			=>	'git clone git@github.com:igmr/FlightPHP-Api-REST-TodoList.git',
 			'requirements'	=>	['php5.3^', 'composer', 'mysql'],
 			'composer'		=>	'composer update',
@@ -13,7 +13,7 @@ class HomeModel {
 				'lists'		=>	[
 					[
 						'method'		=>	'GET',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/list',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/list',
 						'description'	=>	'Listado de listas',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
@@ -37,7 +37,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'GET',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/list/{id}',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/list/{id}',
 						'description'	=>	'Obtener lista',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
@@ -67,7 +67,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'POST',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/list',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/list',
 						'description'	=>	'Crear lista',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
@@ -104,7 +104,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'PUT',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/list/{id}',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/list/{id}',
 						'description'	=>	'Actualizar lista',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
@@ -147,7 +147,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'DELETE',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/list/{id}',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/list/{id}',
 						'description'	=>	'Eliminar lista',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
@@ -186,7 +186,7 @@ class HomeModel {
 				'tasks'		=>	[
 					[
 						'method'		=>	'GET',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task',
 						'description'	=>	'lista de tareas',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
@@ -213,7 +213,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'GET',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/{id}',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/{id}',
 						'description'	=>	'lista de tareas',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
@@ -246,7 +246,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'GET',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/completed',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/completed',
 						'description'	=>	'lista de tareas completadas',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
@@ -273,7 +273,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'GET',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/deleted',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/deleted',
 						'description'	=>	'lista de tareas eliminadas',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
@@ -300,7 +300,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'POST',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task',
 						'description'	=>	'Crear tarea',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
@@ -311,7 +311,7 @@ class HomeModel {
 								'required'		=>	true,
 							],
 							'description'	=>	[
-								'description'	=>	'Descripción de tarea',
+								'description'	=>	'Descripcion de tarea',
 								'type'			=>	'string(512)',
 								'required'		=>	false,
 							],
@@ -347,7 +347,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'POST',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/completed/{id}',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/completed/{id}',
 						'description'	=>	'Completar tarea.',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
@@ -386,7 +386,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'PUT',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/{id}',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/{id}',
 						'description'	=>	'Actualizar tarea',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
@@ -403,7 +403,7 @@ class HomeModel {
 								'required'		=>	false,
 							],
 							'description'	=>	[
-								'description'	=>	'Descripción de tarea',
+								'description'	=>	'Descripcion de tarea',
 								'type'			=>	'string(512)',
 								'required'		=>	false,
 							],
@@ -439,8 +439,8 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'DELETE',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/{id}',
-						'description'	=>	'Eliminación lógico de tarea',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/{id}',
+						'description'	=>	'Eliminacion logico de tarea',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[
 							'id'	=>	[
@@ -476,7 +476,7 @@ class HomeModel {
 					],
 					[
 						'method'		=>	'DELETE',
-						'url'			=>	'https://ivangabino.com/apis/flightphp-api-rest/api/task/destroy',
+						'url'			=>	'https://ivangabino.com/apis/FlightPHP-Api-REST-TodoList/api/v1/task/destroy',
 						'description'	=>	'Destruir tareas eliminadas.',
 						'Content/Type'	=>	'Application/json',
 						'params'		=>	[],
