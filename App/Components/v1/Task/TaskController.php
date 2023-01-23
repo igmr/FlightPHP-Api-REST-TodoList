@@ -13,6 +13,7 @@ class TaskController extends Response
 	protected $taskModel;
 	protected $listModel;
 	protected $text;
+
 	public function __construct()
 	{
 		$this->taskModel = new TaskModel();
@@ -37,6 +38,7 @@ class TaskController extends Response
 			return $this->getResponseException($except);
 		}
 	}
+
 	public function completed()
 	{
 		try {
@@ -50,6 +52,7 @@ class TaskController extends Response
 			return $this->getResponseException($except);
 		}
 	}
+
 	public function deleted()
 	{
 		try {
@@ -63,6 +66,7 @@ class TaskController extends Response
 			return $this->getResponseException($except);
 		}
 	}
+
 	public function show(string $id)
 	{
 		try {
@@ -119,6 +123,7 @@ class TaskController extends Response
 			return $this->getResponseException($except);
 		}
 	}
+
 	public function complete(string $id)
 	{
 		try {
@@ -204,6 +209,7 @@ class TaskController extends Response
 			return $this->getResponseException($except);
 		}
 	}
+
 	public function destroy()
 	{
 		try {
@@ -260,6 +266,7 @@ class TaskController extends Response
 		}
 		return $errors;
 	}
+
 	private function verifyDataEdit(string $id)
 	{
 		$errors = [];
@@ -300,6 +307,7 @@ class TaskController extends Response
 		}
 		return $errors;
 	}
+
 	private function verifyId(string $id)
 	{
 		$errors = [];

@@ -8,16 +8,19 @@ class TaskModel
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
+				, t.completed as status
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
 			WHERE 1=1
 				AND t.id > 1
-				AND t.deleted_at IS NULL;';
+				AND t.deleted_at IS NULL
+			ORDER BY t.id DESC;';
 		$sql = Flight::db()->prepare($query);
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
+
 	public function findAllCompleted()
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
@@ -27,11 +30,13 @@ class TaskModel
 			WHERE 1=1
 				AND t.id > 1
 				AND t.completed = 1
-				AND t.deleted_at IS NULL';
+				AND t.deleted_at IS NULL
+			ORDER BY t.id DESC;;';
 		$sql = Flight::db()->prepare($query);
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
+
 	public function findAllDeleted()
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
@@ -41,11 +46,13 @@ class TaskModel
 				ON t.list_id = l.id
 			WHERE 1=1
 				AND t.id > 1
-				AND t.deleted_at IS NOT NULL';
+				AND t.deleted_at IS NOT NULL
+			ORDER BY t.id DESC;';
 		$sql = Flight::db()->prepare($query);
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
+
 	public function findOneById(string $id)
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
@@ -62,6 +69,7 @@ class TaskModel
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
+
 	public function store(string $title, string $description = ''
 		, string $list = '1', bool $complete = false)
 	{
@@ -76,6 +84,7 @@ class TaskModel
 		$sql->bindParam(4, $complete, PDO::PARAM_BOOL);
 		return $sql->execute();
 	}
+
 	public function edit(string $id, string $title, string $description
 		, int $list)
 	{
@@ -137,6 +146,7 @@ class TaskModel
 		$sql->bindParam(2, $id, PDO::PARAM_INT);
 		return $sql->execute();
 	}
+
 	public function delete(string $id)
 	{
 		$query = '	UPDATE Tasks
