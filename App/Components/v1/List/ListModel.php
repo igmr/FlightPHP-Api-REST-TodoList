@@ -6,7 +6,7 @@ class ListModel
 {
 	public function findAll()
 	{
-		$query = 'SELECT id, name
+		$query = 'SELECT id, name,created_at as created
 			FROM Lists
 			WHERE 1=1
 				AND deleted_at IS NULL
@@ -17,7 +17,7 @@ class ListModel
 	}
 	public function findOneById(string $id)
 	{
-		$query = 'SELECT id, name
+		$query = 'SELECT id, name,created_at as created
 			FROM Lists
 			WHERE 1=1
 				AND id= ?
