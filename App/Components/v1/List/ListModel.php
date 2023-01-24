@@ -10,7 +10,7 @@ class ListModel
 			FROM Lists
 			WHERE 1=1
 				AND deleted_at IS NULL
-			ORDER BY id ASC';
+			ORDER BY name ASC';
 		$sql = Flight::db()->prepare($query);
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
@@ -33,7 +33,7 @@ class ListModel
 			FROM Lists
 			WHERE 1=1
 				AND deleted_at IS NOT NULL
-			ORDER BY id ASC';
+			ORDER BY name ASC';
 		$sql = Flight::db()->prepare($query);
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
