@@ -45,6 +45,19 @@ class ListController extends Response
 			return $this->getResponseException($except);
 		}
 	}
+	public function deleted()
+	{
+		try {
+			//*	***************************************************************************
+			//*	FIND ALL
+			//*	***************************************************************************
+			$data = $this->listModel->findAllDeleted();
+			return $this->getResponseData($data);
+		} catch (\Exception $e) {
+			$except = ['general' => 'Excepción no controlada'];
+			return $this->getResponseException($except);
+		}
+	}
 	public function store()
 	{
 		try {

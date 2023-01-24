@@ -27,6 +27,17 @@ class ListModel
 		$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
+	public function findAllDeleted()
+	{
+		$query = 'SELECT id, name,created_at as created
+			FROM Lists
+			WHERE 1=1
+				AND deleted_at IS NOT NULL
+			ORDER BY id ASC';
+		$sql = Flight::db()->prepare($query);
+		$sql->execute();
+		return $sql->fetchAll(PDO::FETCH_OBJ);
+	}
 	public function store(string $name)
 	{
 		$query = 'INSERT INTO Lists(name, created_at) VALUES (?, NOW());';
