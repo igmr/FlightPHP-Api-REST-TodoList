@@ -31,6 +31,20 @@ class TaskController extends Response
 			//*	***************************************************************************
 			//*	FIND ALL
 			//*	***************************************************************************
+			$data = $this->taskModel->findAllNotCompleted();
+			return $this->getResponseData($data);	
+		} catch (\Exception $e) {
+			$except = ['general' => 'Excepción no controlada'];
+			return $this->getResponseException($except);
+		}
+	}
+
+	public function all()
+	{
+		try {
+			//*	***************************************************************************
+			//*	FIND ALL
+			//*	***************************************************************************
 			$data = $this->taskModel->findAll();
 			return $this->getResponseData($data);	
 		} catch (\Exception $e) {

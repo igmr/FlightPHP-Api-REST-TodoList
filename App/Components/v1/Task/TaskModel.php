@@ -21,10 +21,27 @@ class TaskModel
 		return $sql->fetchAll(PDO::FETCH_OBJ);
 	}
 
+	public function findAllNotCompleted()
+	{
+		$query = 'SELECT t.id, t.title, t.description, l.name AS list
+				, t.created_at as created, t.deleted_at as deleted
+			FROM Tasks AS t
+			INNER JOIN Lists AS l
+				ON t.list_id = l.id
+			WHERE 1=1
+				AND t.id > 1
+				AND t.completed = 0
+				AND t.deleted_at IS NULL
+			ORDER BY t.id DESC;';
+		$sql = Flight::db()->prepare($query);
+		$sql->execute();
+		return $sql->fetchAll(PDO::FETCH_OBJ);
+	}
+
 	public function findAllCompleted()
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
-				, t.created_at as created
+				, t.created_at as created, t.deleted_at as deleted
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
@@ -42,7 +59,7 @@ class TaskModel
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
-				, t.created_at as created, deleted_at as deleted
+				, t.created_at as created, t.deleted_at as deleted
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
