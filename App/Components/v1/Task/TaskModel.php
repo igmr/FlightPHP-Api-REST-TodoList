@@ -8,7 +8,7 @@ class TaskModel
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
-				, t.completed as status, created_at as created
+				, t.completed as status, t.created_at as created
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
@@ -24,7 +24,7 @@ class TaskModel
 	public function findAllCompleted()
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
-				, created_at as created
+				, t.created_at as created
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
@@ -42,7 +42,7 @@ class TaskModel
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
-				, created_at as created, deleted_at as deleted
+				, t.created_at as created, deleted_at as deleted
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
@@ -59,7 +59,7 @@ class TaskModel
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
 				, IF(t.completed = 1, "Completado", "No Completado") as complete
-				, created_at as created
+				, t.created_at as created
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
