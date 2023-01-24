@@ -24,7 +24,7 @@ class TaskModel
 	public function findAllNotCompleted()
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
-				, t.created_at as created, t.deleted_at as deleted
+				, t.completed as status, t.created_at as created, t.deleted_at as deleted
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
@@ -41,7 +41,7 @@ class TaskModel
 	public function findAllCompleted()
 	{
 		$query = 'SELECT t.id, t.title, t.description, l.name AS list
-				, t.created_at as created, t.deleted_at as deleted
+				, t.completed as status, t.created_at as created, t.deleted_at as deleted
 			FROM Tasks AS t
 			INNER JOIN Lists AS l
 				ON t.list_id = l.id
