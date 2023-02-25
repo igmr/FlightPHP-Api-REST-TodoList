@@ -101,7 +101,7 @@ composer update
 
 #### Modelo entidad relación
 
-<img src="./doc/model.png" alt="Modelo entidad relación"
+<img src="./docs/model.png" alt="Modelo entidad relación"
 style="display: block; margin: 0 auto" />
 
 #### Importar y exportar script SQL
